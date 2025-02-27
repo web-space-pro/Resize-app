@@ -20,18 +20,20 @@ jobs:
         with:
           flutter-version: '3.19.0'
 
-      - name: Upgrade Dart SDK
-         run: flutter doctor --force && flutter upgrade
+      - name: Upgrade Flutter and Dart
+        run: |
+          flutter upgrade
+          flutter doctor --force
 
       - name: Install dependencies
-         run: flutter pub get
+        run: flutter pub get
 
       - name: Build APK
         run: flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
-    with:
+        uses: actions/upload-artifact@v4
+        with:
           name: Android-Build
           path: build/app/outputs/flutter-apk/app-release.apk
 
@@ -45,6 +47,11 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
+
+      - name: Upgrade Flutter and Dart
+        run: |
+          flutter upgrade
+          flutter doctor --force
 
       - name: Install dependencies
         run: flutter pub get
@@ -71,6 +78,11 @@ jobs:
 
       - name: Enable Windows
         run: flutter config --enable-windows-desktop
+
+      - name: Upgrade Flutter and Dart
+        run: |
+          flutter upgrade
+          flutter doctor --force
 
       - name: Install dependencies
         run: flutter pub get
