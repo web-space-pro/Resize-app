@@ -1,0 +1,52 @@
+name: flutter_application_1
+description: "A new Flutter project."
+
+# Предотвращает случайную публикацию в pub.dev
+publish_to: 'none'
+
+# Версия приложения
+version: 1.0.0+1
+
+# Версия SDK Dart
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+# Основные зависимости проекта
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_dropzone: ^3.0.6
+  image: ^4.5.2
+
+  file_picker: ^9.0.0
+  cupertino_icons: ^1.0.8
+  desktop_drop: ^0.5.0
+  path_provider: ^2.1.5
+  flutter_image_compress: ^2.4.0
+
+# Dev-зависимости (для тестирования и линтинга кода)
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+# Конфигурация Flutter
+flutter:
+  uses-material-design: true
+
+  # Подключение кастомных шрифтов
+  fonts:
+    - family: Jost
+      fonts:
+        - asset: assets/fonts/Jost-Regular.ttf
+        - asset: assets/fonts/Jost-Bold.ttf
+          weight: 700
+
+flutter_icons:
+  android: true
+  ios: true
+  macos: true
+  image_path: "assets/icon.png"
+  adaptive_icon_foreground: "assets/icon.png"
+  adaptive_icon_background: "#ffffff"
