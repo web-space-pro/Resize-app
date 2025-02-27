@@ -20,10 +20,13 @@ jobs:
         with:
           flutter-version: '3.19.0'
 
-      - name: Upgrade Flutter and Dart
-        run: |
-          flutter upgrade
-          flutter doctor --force
+      - name: Force upgrade Flutter and Dart
+  run: |
+    flutter channel stable
+    flutter upgrade --force
+    flutter --version
+    dart --version
+    flutter doctor
 
       - name: Install dependencies
         run: flutter pub get
