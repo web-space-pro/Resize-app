@@ -20,8 +20,11 @@ jobs:
         with:
           flutter-version: '3.19.0'
 
+      - name: Upgrade Dart SDK
+         run: flutter doctor --force && flutter upgrade
+
       - name: Install dependencies
-        run: flutter pub get
+         run: flutter pub get
 
       - name: Build APK
         run: flutter build apk --release
